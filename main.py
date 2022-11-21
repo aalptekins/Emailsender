@@ -15,10 +15,13 @@ class MainWindow(QMainWindow):
 
     def send_email(self):
 
+        with open("email_password.txt") as file:
+            data = file.readlines()
 
-        email_sender = 'alptekinenglish@gmail.com'
-        with open("password.txt") as file:
-            password = file.read()
+            email = data[0]
+            password = data[1]
+
+        email_sender = email
         email_password = password
         email_receiver = self.lineRecipient.text()
         port = 465
