@@ -17,7 +17,9 @@ class MainWindow(QMainWindow):
 
 
         email_sender = 'alptekinenglish@gmail.com'
-        email_password = "aiyuigwpmstvfacb"
+        with open("password.txt") as file:
+            password = file.read()
+        email_password = password
         email_receiver = self.lineRecipient.text()
         port = 465
 
